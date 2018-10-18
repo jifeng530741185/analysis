@@ -40,4 +40,11 @@ public class Customer {
     public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone == null ? null : contactPhone.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Customer [customerId=" + customerId + ", customerName="
+				+ customerName + ", certNum=" + certNum + ", contactPhone="
+				+ contactPhone + "]";
+	}
 }

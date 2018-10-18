@@ -1,7 +1,9 @@
 package com.unicom.sale.mapper;
 
-import com.unicom.sale.model.Orderdetail;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.unicom.sale.model.Orderdetail;
+@Mapper
 public interface OrderdetailMapper {
     int deleteByPrimaryKey(Integer orderId);
 

@@ -2,6 +2,8 @@ package com.unicom.sale.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Orderdetail {
     private Integer orderId;
 
@@ -72,7 +74,7 @@ public class Orderdetail {
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm")
     public Date getCreateTime() {
         return createTime;
     }
@@ -112,4 +114,13 @@ public class Orderdetail {
     public void setProductName(String productName) {
         this.productName = productName == null ? null : productName.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Orderdetail [orderId=" + orderId + ", customerId=" + customerId
+				+ ", svcId=" + svcId + ", province=" + province + ", city="
+				+ city + ", address=" + address + ", createTime=" + createTime
+				+ ", updateTime=" + updateTime + ", status=" + status
+				+ ", remark=" + remark + ", productName=" + productName + "]";
+	}
 }
