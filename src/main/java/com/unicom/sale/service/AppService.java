@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.unicom.sale.mapper.CustomerMapper;
 import com.unicom.sale.mapper.OrderBriefMapper;
@@ -36,7 +35,7 @@ public class AppService {
 		//System.out.println("Service"+province);
 		return smap.showList(province, city);
 	}
-	
+	//滚回事务
 	@Transactional(rollbackFor={Exception.class})
 	public int insertOrders(OrderVo orderVo){
 		int code =0 ;
@@ -52,10 +51,14 @@ public class AppService {
 			//获取返回的自增用户id 
 			int customer_id=customer.getCustomerId();
 			//号码状态修改
+			Service_num num= smap.selectByPrimaryKey(orderVo.getSvcId());
 			smap.updateStatus(1,orderVo.getSvcId());
 			//订单表插入
 			orderVo.setCustomerId(customer_id);
 			orderVo.setCreateTime(new Date());
+			orderVo.setUpdateTime(new Date());
+			orderVo.setProvince(num.getProvince());
+			orderVo.setCity(num.getCity());
 			orderVo.setStatus(0);
 			orderVo.setProductName("王卡套餐");
 			System.out.println(orderVo);

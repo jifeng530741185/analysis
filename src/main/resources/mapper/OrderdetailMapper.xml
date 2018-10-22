@@ -161,4 +161,5 @@
       product_name = #{productName,jdbcType=VARCHAR}
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
+  
 </mapper>

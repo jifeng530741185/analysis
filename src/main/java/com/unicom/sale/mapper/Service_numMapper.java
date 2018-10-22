@@ -24,7 +24,7 @@ public interface Service_numMapper {
     int updateByPrimaryKey(Service_num record);
     
     //更加省市的值输出号码列表
-    @Select("select * from service_num where status=0 and province=#{province} and city=#{city} ORDER BY RAND() LIMIT 90")
+    @Select("select * from service_num where status=0 and province=#{province} and city=#{city} ORDER BY RAND() LIMIT 91" )
     List<Service_num> showList(@Param("province") String province, @Param("city")  String city);
     
     @Update("update service_num set status=#{status} where svc_id=#{svcId}")

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.unicom.sale.model.Customer;
@@ -35,10 +37,9 @@ public class AppController {
 		return appService.showList(province,city);
 	}
 	//用户提交触发 用户表、订单表新增，号码表更新
-	@PostMapping("/insert")
+	@PostMapping(value="/insert")
 	public  Map<String, Object> insert(OrderVo orderVo){
 			Map<String, Object> resultMap =new HashMap<String, Object>();
-			
 			try {
 				int code =  appService.insertOrders(orderVo);
 				//System.out.println(orderVo);

@@ -82,7 +82,7 @@ public class Orderdetail {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm")
     public Date getUpdateTime() {
         return updateTime;
     }

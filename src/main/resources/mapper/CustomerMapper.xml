@@ -79,4 +79,5 @@
       contact_phone = #{contactPhone,jdbcType=VARCHAR}
     where customer_id = #{customerId,jdbcType=INTEGER}
   </update>
+  
 </mapper>
