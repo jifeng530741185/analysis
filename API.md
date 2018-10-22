@@ -13,10 +13,7 @@
 >参数{province}:省名 不带“省”字  
 >参数{city}：地市名 不带“市”
 ###返回字段
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
   
 | 参数  | 类型 | 说明
 |-----|-----|------|
@@ -41,7 +38,8 @@
 ###HTTP请求方式
 >POST
 ###请求参数
->| 参数  | 必填| 类型 | 说明
+
+| 参数  | 必填| 类型 | 说明
 |-----|-----|------|----|
 | svcId  | true| int  | 号码id |
 | customerName  | true| String  | 用户姓名 |
@@ -84,7 +82,8 @@
 ###请求参数
 >参数{value}:订单提交时用户联系方式或者新选号（联通号码）
 ###返回字段  
->| 参数  | 类型 | 说明
+
+| 参数  | 类型 | 说明
 |-----|-----|------|
 | orderId  | int  | 订单ID |
 | customerName  |  String | 用户姓名 |
