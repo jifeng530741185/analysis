@@ -13,13 +13,13 @@
 >参数{province}:省名 不带“省”字  
 >参数{city}：地市名 不带“市”
 ###返回字段  
->| 参数  | 类型 | 说明
->|-----|-----|------|
->| svcId  | int  | 号码id |
->| svcNum  |  String | 号码 |
->| province  | String  | 归属省 |
->| city  | String  | 归属市 |
->| status  | int  | 号码状态，0：可用，1：预占，2：在用 |
+| 参数  | 类型 | 说明
+|-----|-----|------|
+| svcId  | int  | 号码id |
+| svcNum  |  String | 号码 |
+| province  | String  | 归属省 |
+| city  | String  | 归属市 |
+| status  | int  | 号码状态，0：可用，1：预占，2：在用 |
 
 ###接口示例
 >地址:[http://localhost:8090/app/numlist/浙江/杭州]
@@ -37,12 +37,12 @@
 >POST
 ###请求参数
 >| 参数  | 必填| 类型 | 说明
->|-----|-----|------|----|
->| svcId  | true| int  | 号码id |
->| customerName  | true| String  | 用户姓名 |
->| certNum  | true| String  | 身份证号 |
->| contactPhone  | String| int  | 用户现有联系方式 |
->| address  | true| String  | 用户地址 |
+|-----|-----|------|----|
+| svcId  | true| int  | 号码id |
+| customerName  | true| String  | 用户姓名 |
+| certNum  | true| String  | 身份证号 |
+| contactPhone  | String| int  | 用户现有联系方式 |
+| address  | true| String  | 用户地址 |
  
 ###返回字段  
 >{
@@ -80,12 +80,12 @@
 >参数{value}:订单提交时用户联系方式或者新选号（联通号码）
 ###返回字段  
 >| 参数  | 类型 | 说明
->|-----|-----|------|
->| orderId  | int  | 订单ID |
->| customerName  |  String | 用户姓名 |
->| svcNum  | String  | 新选号码 |
->| createTime  | date  | 订单提交事件 |
->| status  | int  | 订单状态,0:在途 1:成功 2:不再办理|
+|-----|-----|------|
+| orderId  | int  | 订单ID |
+| customerName  |  String | 用户姓名 |
+| svcNum  | String  | 新选号码 |
+| createTime  | date  | 订单提交事件 |
+| status  | int  | 订单状态,0:在途 1:成功 2:不再办理|
 
 ###接口示例
 >地址:[http://localhost:8090/app/getOrder/15657175987]
